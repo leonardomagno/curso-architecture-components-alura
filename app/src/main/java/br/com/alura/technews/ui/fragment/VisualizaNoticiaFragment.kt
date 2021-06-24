@@ -14,11 +14,10 @@ import br.com.alura.technews.ui.fragment.extensions.mostraErro
 import br.com.alura.technews.ui.viewmodel.VisualizaNoticiaViewModel
 import br.com.alura.technews.ui.viewmodel.factory.VisualizaNoticiaViewModelFactory
 import kotlinx.android.synthetic.main.visualiza_noticia.*
-import java.lang.IllegalArgumentException
-import java.util.zip.Inflater
 
 private const val NOTICIA_NAO_ENCONTRADA = "Notícia não encontrada"
 private const val MENSAGEM_FALHA_REMOCAO = "Não foi possível remover notícia"
+private const val TITULO_APPBAR = "Notícia"
 
 class VisualizaNoticiaFragment : Fragment() {
 
@@ -36,6 +35,7 @@ class VisualizaNoticiaFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        activity?.title = TITULO_APPBAR
         setHasOptionsMenu(true)
         verificaIdDaNoticia()
         buscaNoticiaSelecionada()
